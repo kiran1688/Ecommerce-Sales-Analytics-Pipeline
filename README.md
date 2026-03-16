@@ -248,11 +248,10 @@ Alerts are triggered for job failures or abnormal data patterns.
 ## My Role in the Project
 
 Role:
-Project Lead and Data Quality / Pipeline Orchestration Engineer
+Project Data Quality / Pipeline Orchestration Engineer
 
 Responsibilities:
 
-- Led the development of the end-to-end e-commerce analytics pipeline
 - Implemented data quality monitoring and validation checks
 - Managed Bronze, Silver, and Gold layer validation
 - Configured pipeline scheduling using Databricks Workflows
