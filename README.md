@@ -21,7 +21,7 @@ This system enables organizations to analyze sales performance, customer behavio
 
 ---
 
-## System Architecture
+## Lakehouse Architecture
 
 The pipeline follows a modern Lakehouse Data Engineering Architecture.
 
