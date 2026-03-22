@@ -116,17 +116,7 @@ Create clean and standardized datasets.
 - Perform data validation checks  
 - Join related datasets  
 - Apply data type casting  
-- Trim whitespace and handle invalid characters  
 - Add metadata columns (processed_timestamp, data_quality_flag)  
-
-*Quarantine Handling:*
-
-- Invalid or malformed records are not deleted  
-- Stored in separate *quarantine tables* for analysis  
-- Helps in:
-  - Debugging data issues  
-  - Maintaining data integrity  
-  - Avoiding data loss  
 
 ---
 
@@ -141,19 +131,6 @@ Create clean and standardized datasets.
 | products |
 | product_category_translation |
 | sellers |
-
----
-
-*Quarantine Tables:*
-
-| Quarantine Tables |
-|------------------|
-| customer_quarantine_data |
-| orders_quarantine_data |
-| order_items_quarantine_data |
-| payments_quarantine_data |
-| products_quarantine_data |
-| sellers_quarantine_data |
 
 ---
 
@@ -248,39 +225,38 @@ The Gold layer supports multiple business dashboards designed for different stak
 ###  Sales Performance Dashboard
 
 *Key Metrics:*
+- total_revenue
+- Total_orders 
+- Top Selling Products 
+- Revenue Trend 
+- Sales by Region 
 
-- Total Revenue  
-- Total Orders  
-- Average Order Value (AOV)  
-- Top Selling Products  
-- Revenue by Category  
-- Regional Sales  
-<img width="4000" height="4422" alt="d855994d-1" src="https://github.com/user-attachments/assets/39eb0c73-8efc-4260-9ae5-8412c0771359" />
----
+<img width="1460" height="852" alt="Screenshot 2026-03-13 092748" src="https://github.com/user-attachments/assets/c4206f44-49e6-4a35-894d-092646071b59" />
 
 ###  Customer Analytics Dashboard
 
 *Key Metrics:*
 
-- Customer Lifetime Value (CLV)  
-- Repeat Customers  
-- Purchase Frequency  
-- Customer Segmentation  
-<img width="4000" height="3339" alt="e58d4cf5-1" src="https://github.com/user-attachments/assets/284e49a2-a623-49f0-9ecf-1b3062e9a426" />
+- Customer Purchase Frequency
+- Repeat vs One-Time Customers
+- Average Order Value by Customer
+- Top Customers by Revenue
+- Top Customers by Revenue 
 
----
+
+---<img width="1419" height="733" alt="Screenshot 2026-03-13 093544" src="https://github.com/user-attachments/assets/b1f36c08-5d9d-488b-b30c-496a4b89d8af" />
+
 
 ###  Strategic Insights Dashboard
 
 *Key Metrics:*
 
-- Demand Forecasting  
-- Customer Churn Analysis  
-- Product Affinity Insights  
-- Seller Performance  
-- Delivery Performance  
-![Strategic_Insights_Dashboard 2026-03-19 09_37_page-0001](https://github.com/user-attachments/assets/4e2bd730-b8ce-4187-95e7-15c1cc2b23a1)
----
+- Seller Performance
+- Delivery Performance
+- Shipping Cost Impact
+
+---<img width="1430" height="741" alt="Screenshot 2026-03-13 093027" src="https://github.com/user-attachments/assets/40ef70fd-e02e-4afb-83f6-92397c9ac91c" />
+
 
 ##  Pipeline Automation
 
@@ -317,7 +293,7 @@ Time: 3 AM UTC
 1. Data ingestion from AWS S3 (Raw Zone)  
 2. Bronze layer creation (Delta tables)  
 3. Silver layer transformation (data cleaning, validation, quarantine handling)  
-4. Gold layer modeling (Star Schema + SCD Type 2)  
+4. Gold layer modeling (Star Schema )  
 5. Data quality checks and validation  
 6. Analytics table preparation for dashboards  
 
