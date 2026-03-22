@@ -207,7 +207,7 @@ The Gold layer supports multiple business dashboards designed for different stak
 - Top Selling Products 
 - Revenue Trend 
 - Sales by Region
-- 
+
 <img width="1017" height="758" alt="Sales Performance" src="https://github.com/user-attachments/assets/b5f04fd3-eab9-41e8-b066-958ad4f127bd" />
 
 -----
