@@ -151,29 +151,6 @@ Create an analytics-ready star schema for business intelligence.
 
 ---
 
-*SCD Type 2 Implementation (dim_customers):*
-
-- Implemented *Slowly Changing Dimension (SCD Type 2)* to track historical changes in customer data.
-
-- Instead of updating records, new records are inserted when changes occur.
-
-- Key columns used:
-  - customer_key (surrogate key)
-  - effective_start_date
-  - effective_end_date
-  - is_current
-
-- Logic:
-  - Existing record → marked as inactive (is_current = false)
-  - New record → inserted with updated values (is_current = true)
-
-- Benefits:
-  - Maintains full history of customer changes  
-  - Enables time-based and trend analysis  
-  - Supports accurate business reporting  
-
----
-
 The Gold layer supports analytical queries such as revenue analysis, customer behavior analysis, and seller performance evaluation.
 ---
 
@@ -188,30 +165,30 @@ The pipeline generates business-ready insights from the Gold layer, structured i
 - Revenue Trend Analysis (Daily / Monthly)
 - Total Orders and Sales Volume
 - Top Selling Products by Revenue
-- Revenue by Product Category
-- Regional Sales Distribution
+- Sales by Product Category
+- Customer Distribution by Region
 
 
 ---
 
 ###  Customer Analytics Insights
 
-- Customer Lifetime Value (CLV)
-- Repeat vs New Customer Analysis
 - Customer Purchase Frequency
 - Average Order Value (AOV)
-- Customer Segmentation (Behavior & Region)
+- Seller Performance Analysis
+- Delivery Performance
+- Shipping Cost Impact on Revenue
 
 
 ---
 
 ###  Strategic Insights
 
-- Demand Forecasting Trends
-- Customer Churn Analysis
+- Customer Lifetime Value (CLV)
+- Customer Segmentation
 - Product Affinity (Market Basket Analysis)
-- Seller Performance Evaluation
-- Delivery and Fulfillment Performance
+- Demand Forecasting (Historical Trend)
+- Customer Churn Identification
 
 
 ---
@@ -229,9 +206,11 @@ The Gold layer supports multiple business dashboards designed for different stak
 - Total_orders 
 - Top Selling Products 
 - Revenue Trend 
-- Sales by Region 
+- Sales by Region
+- 
+<img width="1017" height="758" alt="Sales Performance" src="https://github.com/user-attachments/assets/b5f04fd3-eab9-41e8-b066-958ad4f127bd" />
 
-<img width="1460" height="852" alt="Screenshot 2026-03-13 092748" src="https://github.com/user-attachments/assets/c4206f44-49e6-4a35-894d-092646071b59" />
+-----
 
 ###  Customer Analytics Dashboard
 
@@ -243,9 +222,9 @@ The Gold layer supports multiple business dashboards designed for different stak
 - Top Customers by Revenue
 - Top Customers by Revenue 
 
+<img width="1017" height="749" alt="Customer Analysis" src="https://github.com/user-attachments/assets/a973f674-c522-4a54-9508-40c8a7a2415b" />
 
----<img width="1419" height="733" alt="Screenshot 2026-03-13 093544" src="https://github.com/user-attachments/assets/b1f36c08-5d9d-488b-b30c-496a4b89d8af" />
-
+----
 
 ###  Strategic Insights Dashboard
 
@@ -255,8 +234,9 @@ The Gold layer supports multiple business dashboards designed for different stak
 - Delivery Performance
 - Shipping Cost Impact
 
----<img width="1430" height="741" alt="Screenshot 2026-03-13 093027" src="https://github.com/user-attachments/assets/40ef70fd-e02e-4afb-83f6-92397c9ac91c" />
+<img width="1154" height="509" alt="Strategic Insights" src="https://github.com/user-attachments/assets/94dd2ebb-3a02-458c-8d2a-4d9c136fb5a9" />
 
+----
 
 ##  Pipeline Automation
 
@@ -310,11 +290,6 @@ The pipeline implements strong *data quality and monitoring mechanisms* to ensur
 - Null value handling and checks  
 - Duplicate detection  
 - Data validation rules (invalid/malformed data detection)  
-
-*Quarantine Handling:*
-
-- Invalid records are stored in *quarantine tables* instead of being dropped  
-- Enables debugging, traceability, and business review  
 
 *Monitoring & Logging:*
 
