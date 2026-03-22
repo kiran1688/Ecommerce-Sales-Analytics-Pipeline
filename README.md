@@ -11,13 +11,15 @@ This system enables organizations to analyze sales performance, customer behavio
 ---
 
 ## Project Objectives
+The goal of this project is to build a scalable, reliable, and production-ready batch ETL pipeline for e-commerce sales analytics capable of handling large volumes of data efficiently.
 
-- Build a scalable batch ETL pipeline for e-commerce data
-- Process raw transactional datasets stored in AWS S3
-- Apply data cleaning, transformation, and validation
-- Design an analytics-ready star schema model
-- Generate business insights and dashboards
-- Automate pipeline execution using Databricks Workflows
+The pipeline is designed to ensure high data quality, fault tolerance, and consistency, enabling trusted and accurate data for business decision-making.
+
+It aims to deliver analytics-ready datasets using a structured data model, supporting efficient querying and performance optimization.
+
+The project focuses on generating actionable business insights such as sales trends, customer behavior, and product performance.
+
+It also emphasizes end-to-end automation and monitoring, ensuring smooth, scheduled, and reliable pipeline execution.
 
 ---
 
